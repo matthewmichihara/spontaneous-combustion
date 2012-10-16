@@ -1,14 +1,18 @@
 package com.fourpool.spontaneouscombustion;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.os.Handler;
 import android.service.wallpaper.WallpaperService;
+import android.util.Pair;
 import android.view.SurfaceHolder;
 
 public class SpontaneousCombustionWallpaperService extends WallpaperService {
@@ -73,23 +77,64 @@ public class SpontaneousCombustionWallpaperService extends WallpaperService {
 
 			List<RigidBody> shootingSpritesToAdd = new ArrayList<RigidBody>();
 
-			// Collision detection
-			for (int i = 0; i < mSprites.size(); i++) {
-				RigidBody currentSprite = mSprites.get(i);
+			// Begin Sweep and Prune collision detection implementation.
+			// See: http://jitter-physics.com/wordpress/?tag=sweep-and-prune
 
-				for (int j = i + 1; j < mSprites.size(); j++) {
-					RigidBody sprite = mSprites.get(j);
+			// Step 1, Sort axis list.
+			Collections.sort(mSprites, new Comparator<RigidBody>() {
+				@Override
+				public int compare(RigidBody r1, RigidBody r2) {
+					float minX1 = r1.getPoint().x - r1.getRadius();
+					float minX2 = r2.getPoint().x - r2.getRadius();
 
-					if (currentSprite.intersects(sprite) && ((currentSprite instanceof Blob) || (sprite instanceof Blob))) {
-						for (int k = 0; k < 360; k += 10) {
-							shootingSpritesToAdd.add(new ShootingBlob(c, currentSprite.getPoint(), k));
-						}
-						currentSprite.setShouldDelete(true);
-						sprite.setShouldDelete(true);
+					return Float.compare(minX1, minX2);
+				}
+			});
+
+			// Step 2, Iterate through axis list, finding possible collisions.
+			List<RigidBody> activeList = new CopyOnWriteArrayList<RigidBody>();
+			if (mSprites.size() > 0) {
+				activeList.add(mSprites.get(0));
+			}
+
+			Set<Pair<RigidBody, RigidBody>> possibleCollisions = new HashSet<Pair<RigidBody, RigidBody>>();
+
+			for (RigidBody sprite : mSprites) {
+
+				for (RigidBody activeBody : activeList) {
+					if (!(sprite instanceof Blob)) {
+						// TODO: Understand why this if statement works.
+						continue;
+					} else if (sprite == activeBody) {
+						// Ignore self.
+						continue;
+					} else if ((sprite.getPoint().x - sprite.getRadius()) > (activeBody.getPoint().x + activeBody.getRadius())) {
+						activeList.remove(activeBody);
+					} else {
+						possibleCollisions.add(new Pair<RigidBody, RigidBody>(sprite, activeBody));
 					}
+				}
+				activeList.add(sprite);
+			}
+
+			// Step 3, Iterate through possible collisions and detect actual
+			// collisions.
+			for (Pair<RigidBody, RigidBody> pair : possibleCollisions) {
+				RigidBody r1 = pair.first;
+				RigidBody r2 = pair.second;
+
+				if (r1.intersects(r2)) {
+					for (int k = 0; k < 360; k += 10) {
+						shootingSpritesToAdd.add(new ShootingBlob(c, r1.getPoint(), k));
+					}
+					r1.setShouldDelete(true);
+					r2.setShouldDelete(true);
 				}
 			}
 
+			// End Sweep and Prune implementation.
+
+			// Update and redraw sprites.
 			Set<RigidBody> markedForDeletionSprites = new HashSet<RigidBody>();
 			for (RigidBody sprite : mSprites) {
 				sprite.update();
@@ -99,6 +144,7 @@ public class SpontaneousCombustionWallpaperService extends WallpaperService {
 				}
 			}
 
+			// Remove any sprites that have been marked for deletion.
 			for (RigidBody sprite : markedForDeletionSprites) {
 				mSprites.remove(sprite);
 			}
