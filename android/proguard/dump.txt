@@ -31569,7 +31569,7 @@ _____________________________________________________________________
   Major version: 0x32
   Minor version: 0x0
   Access flags:  0x21
-    = public class com.fourpool.spontaneouscombustion.a extends java.lang.Object
+    = public class com.fourpool.spontaneouscombustion.android.a extends java.lang.Object
 
 Interfaces (count = 1):
   + Class [com/fourpool/spontaneouscombustion/b]
@@ -32047,7 +32047,7 @@ Methods (count = 11):
       Code attribute attributes (attribute count = 0):
   + Method:       a(Lcom/fourpool/spontaneouscombustion/b;)Z
     Access flags: 0x1
-      = public boolean a(com.fourpool.spontaneouscombustion.b)
+      = public boolean a(com.fourpool.spontaneouscombustion.android.b)
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 96, locals = 10, stack = 6):
       [0] aload_0 v0
@@ -32173,7 +32173,7 @@ _____________________________________________________________________
   Major version: 0x32
   Minor version: 0x0
   Access flags:  0x601
-    = public interface com.fourpool.spontaneouscombustion.b extends java.lang.Object
+    = public interface com.fourpool.spontaneouscombustion.android.b extends java.lang.Object
 
 Interfaces (count = 0):
 
@@ -32217,7 +32217,7 @@ Methods (count = 7):
       = public abstract float e()
   + Method:       a(Lcom/fourpool/spontaneouscombustion/b;)Z
     Access flags: 0x401
-      = public abstract boolean a(com.fourpool.spontaneouscombustion.b)
+      = public abstract boolean a(com.fourpool.spontaneouscombustion.android.b)
 
 Class file attributes (count = 0):
 
@@ -32227,7 +32227,7 @@ _____________________________________________________________________
   Major version: 0x32
   Minor version: 0x0
   Access flags:  0x21
-    = public class com.fourpool.spontaneouscombustion.c extends java.lang.Object
+    = public class com.fourpool.spontaneouscombustion.android.c extends java.lang.Object
 
 Interfaces (count = 1):
   + Class [com/fourpool/spontaneouscombustion/b]
@@ -32703,7 +32703,7 @@ Methods (count = 9):
       Code attribute attributes (attribute count = 0):
   + Method:       a(Lcom/fourpool/spontaneouscombustion/b;)Z
     Access flags: 0x1
-      = public boolean a(com.fourpool.spontaneouscombustion.b)
+      = public boolean a(com.fourpool.spontaneouscombustion.android.b)
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 96, locals = 10, stack = 6):
       [0] aload_0 v0
@@ -32782,7 +32782,7 @@ _____________________________________________________________________
   Major version: 0x32
   Minor version: 0x0
   Access flags:  0x21
-    = public class com.fourpool.spontaneouscombustion.SpontaneousCombustionWallpaperService extends android.service.wallpaper.WallpaperService
+    = public class com.fourpool.spontaneouscombustion.android.SpontaneousCombustionWallpaperService extends android.service.wallpaper.WallpaperService
 
 Interfaces (count = 0):
 
@@ -32853,7 +32853,7 @@ Methods (count = 3):
       Code attribute attributes (attribute count = 0):
   + Method:       a(Lcom/fourpool/spontaneouscombustion/SpontaneousCombustionWallpaperService;)Landroid/os/Handler;
     Access flags: 0x1008
-      = static synthetic android.os.Handler a(com.fourpool.spontaneouscombustion.SpontaneousCombustionWallpaperService)
+      = static synthetic android.os.Handler a(com.fourpool.spontaneouscombustion.android.SpontaneousCombustionWallpaperService)
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 5, locals = 1, stack = 1):
       [0] aload_0 v0
@@ -32871,7 +32871,7 @@ _____________________________________________________________________
   Major version: 0x32
   Minor version: 0x0
   Access flags:  0x20
-    = class com.fourpool.spontaneouscombustion.d extends android.service.wallpaper.WallpaperService$Engine
+    = class com.fourpool.spontaneouscombustion.android.d extends android.service.wallpaper.WallpaperService$Engine
 
 Interfaces (count = 0):
 
@@ -33035,12 +33035,12 @@ Fields (count = 3):
       = private final java.lang.Runnable c
   + Field:        a Lcom/fourpool/spontaneouscombustion/SpontaneousCombustionWallpaperService;
     Access flags: 0x1010
-      = final synthetic com.fourpool.spontaneouscombustion.SpontaneousCombustionWallpaperService a
+      = final synthetic com.fourpool.spontaneouscombustion.android.SpontaneousCombustionWallpaperService a
 
 Methods (count = 5):
   - Method:       <init>(Lcom/fourpool/spontaneouscombustion/SpontaneousCombustionWallpaperService;)V
     Access flags: 0x0
-      = d(com.fourpool.spontaneouscombustion.SpontaneousCombustionWallpaperService)
+      = d(com.fourpool.spontaneouscombustion.android.SpontaneousCombustionWallpaperService)
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 34, locals = 2, stack = 4):
       [0] aload_0 v0
@@ -33392,7 +33392,7 @@ _____________________________________________________________________
   Major version: 0x32
   Minor version: 0x0
   Access flags:  0x20
-    = class com.fourpool.spontaneouscombustion.e extends java.lang.Object
+    = class com.fourpool.spontaneouscombustion.android.e extends java.lang.Object
 
 Interfaces (count = 1):
   + Class [java/lang/Runnable]
@@ -33423,12 +33423,12 @@ Constant Pool (count = 22):
 Fields (count = 1):
   + Field:        a Lcom/fourpool/spontaneouscombustion/d;
     Access flags: 0x1010
-      = final synthetic com.fourpool.spontaneouscombustion.d a
+      = final synthetic com.fourpool.spontaneouscombustion.android.d a
 
 Methods (count = 2):
   - Method:       <init>(Lcom/fourpool/spontaneouscombustion/d;)V
     Access flags: 0x0
-      = e(com.fourpool.spontaneouscombustion.d)
+      = e(com.fourpool.spontaneouscombustion.android.d)
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 10, locals = 2, stack = 2):
       [0] aload_0 v0

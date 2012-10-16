@@ -41,8 +41,8 @@ android.support.v4.view.ViewPager: void setPageMarginDrawable(int)
 android.support.v4.view.ViewPager: void setScrollingCacheEnabled(boolean)
 android.support.v4.view.ViewPager$SavedState
 android.support.v4.view.ViewPager$SavedState: android.os.Parcelable$Creator CREATOR
-com.fourpool.spontaneouscombustion.R$drawable: int ic_launcher
-com.fourpool.spontaneouscombustion.R$string: int app_name
-com.fourpool.spontaneouscombustion.R$xml: int spontaneouscombustion
-com.fourpool.spontaneouscombustion.SpontaneousCombustionWallpaperService
-com.fourpool.spontaneouscombustion.SpontaneousCombustionWallpaperService: SpontaneousCombustionWallpaperService()
+com.fourpool.spontaneouscombustion.android.R$drawable: int ic_launcher
+com.fourpool.spontaneouscombustion.android.R$string: int app_name
+com.fourpool.spontaneouscombustion.android.R$xml: int spontaneouscombustion
+com.fourpool.spontaneouscombustion.android.SpontaneousCombustionWallpaperService
+com.fourpool.spontaneouscombustion.android.SpontaneousCombustionWallpaperService: SpontaneousCombustionWallpaperService()

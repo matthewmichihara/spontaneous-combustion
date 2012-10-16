@@ -1,4 +1,4 @@
-package com.fourpool.spontaneouscombustion;
+package com.fourpool.spontaneouscombustion.android;
 
 import java.util.ArrayList;
 import java.util.Collections;

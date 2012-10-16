@@ -618,13 +618,13 @@ android.support.v4.widget.SearchViewCompatHoneycomb$OnQueryTextListenerCompatBri
 android.support.v4.widget.SimpleCursorAdapter
 android.support.v4.widget.SimpleCursorAdapter$CursorToStringConverter
 android.support.v4.widget.SimpleCursorAdapter$ViewBinder
-com.fourpool.spontaneouscombustion.Blob:
+com.fourpool.spontaneouscombustion.android.Blob:
     private int mRed
     private int mGreen
     private int mBlue
-com.fourpool.spontaneouscombustion.BuildConfig
-com.fourpool.spontaneouscombustion.R
-com.fourpool.spontaneouscombustion.R$attr
-com.fourpool.spontaneouscombustion.R$drawable
-com.fourpool.spontaneouscombustion.R$string
-com.fourpool.spontaneouscombustion.R$xml
+com.fourpool.spontaneouscombustion.android.BuildConfig
+com.fourpool.spontaneouscombustion.android.R
+com.fourpool.spontaneouscombustion.android.R$attr
+com.fourpool.spontaneouscombustion.android.R$drawable
+com.fourpool.spontaneouscombustion.android.R$string
+com.fourpool.spontaneouscombustion.android.R$xml

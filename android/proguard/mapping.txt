@@ -745,7 +745,7 @@ android.support.v4.widget.EdgeEffectCompatIcs -> android.support.v4.d.e:
     boolean onPull(java.lang.Object,float) -> a
     boolean onRelease(java.lang.Object) -> c
     boolean draw(java.lang.Object,android.graphics.Canvas) -> a
-com.fourpool.spontaneouscombustion.Blob -> com.fourpool.spontaneouscombustion.a:
+com.fourpool.spontaneouscombustion.android.Blob -> com.fourpool.spontaneouscombustion.android.a:
     java.util.Random mRandom -> a
     android.graphics.Canvas mCanvas -> b
     float mSpeed -> c
@@ -764,18 +764,18 @@ com.fourpool.spontaneouscombustion.Blob -> com.fourpool.spontaneouscombustion.a:
     void draw() -> c
     android.graphics.PointF getPoint() -> d
     float getRadius() -> e
-    boolean intersects(com.fourpool.spontaneouscombustion.RigidBody) -> a
+    boolean intersects(com.fourpool.spontaneouscombustion.android.RigidBody) -> a
     android.graphics.PointF getRandomStartingPoint() -> f
     float getRandomDirectionAngleDegrees() -> g
-com.fourpool.spontaneouscombustion.RigidBody -> com.fourpool.spontaneouscombustion.b:
+com.fourpool.spontaneouscombustion.android.RigidBody -> com.fourpool.spontaneouscombustion.android.b:
     void update() -> a
     void setShouldDelete(boolean) -> a
     boolean shouldDelete() -> b
     void draw() -> c
     android.graphics.PointF getPoint() -> d
     float getRadius() -> e
-    boolean intersects(com.fourpool.spontaneouscombustion.RigidBody) -> a
-com.fourpool.spontaneouscombustion.ShootingBlob -> com.fourpool.spontaneouscombustion.c:
+    boolean intersects(com.fourpool.spontaneouscombustion.android.RigidBody) -> a
+com.fourpool.spontaneouscombustion.android.ShootingBlob -> com.fourpool.spontaneouscombustion.android.c:
     java.util.Random mRandom -> a
     android.graphics.Canvas mCanvas -> b
     float mSpeed -> c
@@ -794,19 +794,19 @@ com.fourpool.spontaneouscombustion.ShootingBlob -> com.fourpool.spontaneouscombu
     void draw() -> c
     android.graphics.PointF getPoint() -> d
     float getRadius() -> e
-    boolean intersects(com.fourpool.spontaneouscombustion.RigidBody) -> a
-com.fourpool.spontaneouscombustion.SpontaneousCombustionWallpaperService -> com.fourpool.spontaneouscombustion.SpontaneousCombustionWallpaperService:
+    boolean intersects(com.fourpool.spontaneouscombustion.android.RigidBody) -> a
+com.fourpool.spontaneouscombustion.android.SpontaneousCombustionWallpaperService -> com.fourpool.spontaneouscombustion.android.SpontaneousCombustionWallpaperService:
     android.os.Handler mHandler -> a
     android.service.wallpaper.WallpaperService$Engine onCreateEngine() -> onCreateEngine
-    android.os.Handler access$0(com.fourpool.spontaneouscombustion.SpontaneousCombustionWallpaperService) -> a
-com.fourpool.spontaneouscombustion.SpontaneousCombustionWallpaperService$CombustionEngine -> com.fourpool.spontaneouscombustion.d:
+    android.os.Handler access$0(com.fourpool.spontaneouscombustion.android.SpontaneousCombustionWallpaperService) -> a
+com.fourpool.spontaneouscombustion.android.SpontaneousCombustionWallpaperService$CombustionEngine -> com.fourpool.spontaneouscombustion.android.d:
     java.util.List mSprites -> b
     java.lang.Runnable mDrawRunnable -> c
-    com.fourpool.spontaneouscombustion.SpontaneousCombustionWallpaperService this$0 -> a
+    com.fourpool.spontaneouscombustion.android.SpontaneousCombustionWallpaperService this$0 -> a
     void onVisibilityChanged(boolean) -> onVisibilityChanged
     void onCreate(android.view.SurfaceHolder) -> onCreate
     void draw() -> a
     void draw(android.graphics.Canvas) -> a
-com.fourpool.spontaneouscombustion.SpontaneousCombustionWallpaperService$CombustionEngine$1 -> com.fourpool.spontaneouscombustion.e:
-    com.fourpool.spontaneouscombustion.SpontaneousCombustionWallpaperService$CombustionEngine this$1 -> a
+com.fourpool.spontaneouscombustion.android.SpontaneousCombustionWallpaperService$CombustionEngine$1 -> com.fourpool.spontaneouscombustion.android.e:
+    com.fourpool.spontaneouscombustion.android.SpontaneousCombustionWallpaperService$CombustionEngine this$1 -> a
     void run() -> run
