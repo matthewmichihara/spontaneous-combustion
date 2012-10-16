@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Spontaneous Combustion</string>
+    <string name="author">Matthew Michihara</string>
+    <string name="description">Watch blobs explode as they grow and collide.</string>
+</resources>
