@@ -13,7 +13,7 @@ public interface RigidBody {
 
 	public PointF getPoint();
 
-	public int getRadius();
+	public float getRadius();
 
 	public boolean intersects(RigidBody rigidBody);
 }

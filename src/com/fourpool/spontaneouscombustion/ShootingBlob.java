@@ -7,38 +7,34 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PointF;
 
-public class Blob implements RigidBody {
+public class ShootingBlob implements RigidBody {
 	private static final Random mRandom = new Random();
 
 	private final Canvas mCanvas;
-	private final float mSpeed = 0.5f;
-	private final float mDirectionAngleDegrees;
-
-	private PointF mPoint;
-	private float mRadius = 5;
+	private final float mSpeed = 15;
+	private int mDirectionAngleDegrees;
 	private boolean mShouldDelete;
 
+	private PointF mPoint;
 	private Paint mPaint = new Paint();
-	private int mRed;
-	private int mGreen;
-	private int mBlue;
+	private float mRadius = 5;
 
 	private final float mMinX;
 	private final float mMinY;
 	private final float mMaxX;
 	private final float mMaxY;
 
-	public Blob(Canvas canvas) {
+	public ShootingBlob(Canvas canvas, PointF point, int directionAngleDegrees) {
 		mCanvas = canvas;
+		mPoint = new PointF(point.x, point.y);
+		mDirectionAngleDegrees = directionAngleDegrees;
 
 		mMinX = 0 - (2 * mRadius);
 		mMinY = 0 - (2 * mRadius);
 		mMaxX = mCanvas.getWidth();
 		mMaxY = mCanvas.getHeight();
 
-		mPoint = getRandomStartingPoint();
-		mPaint.setColor(Color.WHITE);
-		mDirectionAngleDegrees = getRandomDirectionAngleDegrees();
+		mPaint.setColor(Color.GREEN);
 	}
 
 	@Override
@@ -96,16 +92,4 @@ public class Blob implements RigidBody {
 
 		return distance < (r1 + r2);
 	}
-
-	private PointF getRandomStartingPoint() {
-		float randomX = mRandom.nextFloat() * mMaxX;
-		float randomY = mRandom.nextFloat() * mMaxY;
-
-		return new PointF(randomX, randomY);
-	}
-
-	private float getRandomDirectionAngleDegrees() {
-		return mRandom.nextInt(360);
-	}
-
 }

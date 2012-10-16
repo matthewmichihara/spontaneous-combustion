@@ -53,8 +53,8 @@ public class SpontaneousCombustionWallpaperService extends WallpaperService {
 			try {
 				c = holder.lockCanvas();
 				if (c != null) {
-					if (mSprites.size() < 5) {
-						mSprites.add(new Blob(c, 1));
+					if (mSprites.size() < 10) {
+						mSprites.add(new Blob(c));
 					}
 					draw(c);
 				}
@@ -71,6 +71,8 @@ public class SpontaneousCombustionWallpaperService extends WallpaperService {
 		private void draw(final Canvas c) {
 			c.drawColor(Color.BLACK);
 
+			List<RigidBody> shootingSpritesToAdd = new ArrayList<RigidBody>();
+
 			// Collision detection
 			for (int i = 0; i < mSprites.size(); i++) {
 				RigidBody currentSprite = mSprites.get(i);
@@ -78,7 +80,10 @@ public class SpontaneousCombustionWallpaperService extends WallpaperService {
 				for (int j = i + 1; j < mSprites.size(); j++) {
 					RigidBody sprite = mSprites.get(j);
 
-					if (currentSprite.intersects(sprite)) {
+					if (currentSprite.intersects(sprite) && ((currentSprite instanceof Blob) || (sprite instanceof Blob))) {
+						for (int k = 0; k < 360; k += 10) {
+							shootingSpritesToAdd.add(new ShootingBlob(c, currentSprite.getPoint(), k));
+						}
 						currentSprite.setShouldDelete(true);
 						sprite.setShouldDelete(true);
 					}
@@ -97,6 +102,8 @@ public class SpontaneousCombustionWallpaperService extends WallpaperService {
 			for (RigidBody sprite : markedForDeletionSprites) {
 				mSprites.remove(sprite);
 			}
+
+			mSprites.addAll(shootingSpritesToAdd);
 		}
 	}
 }
