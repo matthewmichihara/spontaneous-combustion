@@ -1,15 +1,11 @@
 package com.fourpool.spontaneouscombustion.android;
 
-import java.util.Random;
-
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PointF;
 
 public class ShootingBlob implements RigidBody {
-	private static final Random mRandom = new Random();
-
 	private final Canvas mCanvas;
 	private final float mSpeed = 15;
 	private int mDirectionAngleDegrees;
@@ -39,12 +35,15 @@ public class ShootingBlob implements RigidBody {
 
 	@Override
 	public void update() {
-		if ((mPoint.x > mMaxX) || (mPoint.x <= mMinX) || (mPoint.y > mMaxY) || (mPoint.y <= mMinY)) {
+		if ((mPoint.x > mMaxX) || (mPoint.x <= mMinX) || (mPoint.y > mMaxY)
+				|| (mPoint.y <= mMinY)) {
 			mShouldDelete = true;
 		}
 
-		double offsetX = Math.cos(Math.toRadians(mDirectionAngleDegrees)) * mSpeed;
-		double offsetY = Math.sin(Math.toRadians(mDirectionAngleDegrees)) * mSpeed;
+		double offsetX = Math.cos(Math.toRadians(mDirectionAngleDegrees))
+				* mSpeed;
+		double offsetY = Math.sin(Math.toRadians(mDirectionAngleDegrees))
+				* mSpeed;
 
 		mPoint.x += offsetX;
 		mPoint.y += offsetY;
@@ -88,7 +87,8 @@ public class ShootingBlob implements RigidBody {
 		float y1 = getPoint().y;
 		float y2 = rigidBody.getPoint().y;
 
-		double distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+		double distance = Math
+				.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 
 		return distance < (r1 + r2);
 	}
